@@ -1,12 +1,9 @@
 use openbrush::traits::Storage;
 
-pub use crate::traits::kv_store;
-pub use crate::traits::kv_store::*;
-
 #[derive(Default, Debug)]
 #[openbrush::storage_item]
 pub struct Data {
-    pub value: u8,
+    value: u8,
 }
 
 pub trait KvStoreImpl: Storage<Data> + Sized {

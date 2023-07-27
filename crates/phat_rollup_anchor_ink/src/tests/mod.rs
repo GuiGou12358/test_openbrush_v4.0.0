@@ -1,10 +1,12 @@
 #![cfg_attr(not(feature = "std"), no_std, no_main)]
 
-#[openbrush::implementation(KvStore)]
+#[phat_rollup_anchor_ink_macro::implementation(KvStore)]
 #[openbrush::contract]
 pub mod test_contract {
 
     use openbrush::traits::Storage;
+    use crate::traits::kv_store::KvStore;
+    use crate::impls::{kv_store, kv_store::KvStoreImpl};
 
     #[ink(storage)]
     #[derive(Default, Storage)]
@@ -29,9 +31,9 @@ pub mod test_contract {
 
         #[ink::test]
         fn test_get_no_value() {
-            let contract = MyContract::new();
-            contract.set_value(12);
-            assert_eq!(12, contract.get_value());
+            let mut contract = MyContract::new();
+            KvStore::set_value(&mut contract, 12);
+            assert_eq!(12, KvStore::get_value(&contract));
         }
 
     }

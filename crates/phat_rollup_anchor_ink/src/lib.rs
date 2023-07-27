@@ -1,5 +1,5 @@
-pub mod impls;
-pub mod traits;
+mod impls;
+mod traits;
 
 #[cfg(test)]
-pub mod tests;
+mod tests;
