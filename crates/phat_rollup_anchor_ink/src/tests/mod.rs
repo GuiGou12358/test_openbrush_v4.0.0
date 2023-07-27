@@ -4,9 +4,9 @@
 #[openbrush::contract]
 pub mod test_contract {
 
-    use openbrush::traits::Storage;
-    use crate::traits::kv_store::KvStore;
     use crate::impls::{kv_store, kv_store::KvStoreImpl};
+    use crate::traits::kv_store::KvStore;
+    use openbrush::traits::Storage;
 
     #[ink(storage)]
     #[derive(Default, Storage)]
@@ -23,8 +23,6 @@ pub mod test_contract {
         }
     }
 
-
-
     #[cfg(test)]
     mod tests {
         use super::*;
@@ -35,7 +33,5 @@ pub mod test_contract {
             KvStore::set_value(&mut contract, 12);
             assert_eq!(12, KvStore::get_value(&contract));
         }
-
     }
-
 }
