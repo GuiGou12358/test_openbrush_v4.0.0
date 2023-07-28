@@ -1,4 +1,3 @@
-mod impls;
 mod traits;
 
 #[cfg(test)]

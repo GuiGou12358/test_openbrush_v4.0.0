@@ -1,12 +1,12 @@
 #![cfg_attr(not(feature = "std"), no_std, no_main)]
 
-#[phat_rollup_anchor_ink_macro::implementation(KvStore)]
 #[openbrush::contract]
 pub mod test_contract {
 
-    use crate::impls::{kv_store, kv_store::KvStoreImpl};
-    use crate::traits::kv_store::KvStore;
+    use crate::traits::kv_store::{self, KvStore, kvstore_external};
     use openbrush::traits::Storage;
+
+    impl KvStore for MyContract {}
 
     #[ink(storage)]
     #[derive(Default, Storage)]

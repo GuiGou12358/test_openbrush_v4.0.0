@@ -13,8 +13,6 @@ scale-info = { version = "2.6", default-features = false, features = ["derive"],
 openbrush = { git = "https://github.com/727-Ventures/openbrush-contracts", tag = "4.0.0-beta", features = ["ownable", "access_control"], default-features = false }
 #openbrush_lang_codegen = { git = "https://github.com/727-Ventures/openbrush-contracts", tag = "4.0.0-beta", default-features = false }
 
-phat_rollup_anchor_ink_macro = { path = "../phat_rollup_anchor_ink_macro", default-features = false  }
-
 [dev-dependencies]
 hex-literal = "0.4.1"
 
@@ -28,5 +26,4 @@ std = [
     "scale/std",
     "scale-info/std",
     "openbrush/std",
-    "phat_rollup_anchor_ink_macro/std",
 ]
